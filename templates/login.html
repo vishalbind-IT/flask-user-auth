@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card shadow-lg p-4 animate-fade">
+      <h3 class="text-center mb-4">Welcome Back</h3>
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control {% if errors.get('email') %}is-invalid{% endif %}" name="email" required>
+          {% if errors.get('email') %}
+            <div class="invalid-feedback">{{ errors['email'] }}</div>
+          {% endif %}
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control {% if errors.get('password') %}is-invalid{% endif %}" name="password" required>
+          {% if errors.get('password') %}
+            <div class="invalid-feedback">{{ errors['password'] }}</div>
+          {% endif %}
+        </div>
+        {% if errors.get('general') %}
+          <div class="alert alert-danger">{{ errors['general'] }}</div>
+        {% endif %}
+        <button type="submit" class="btn btn-success w-100 btn-animate">Login</button>
+      </form>
+
+      <!-- Register link -->
+      <p class="text-center mt-3">
+        Don’t have an account? 
+        <a href="{{ url_for('register') }}" class="text-primary fw-bold">Register here</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

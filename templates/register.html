@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <div class="card shadow-lg p-4 animate-fade">
+      <h3 class="text-center mb-4">Create Account</h3>
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input type="text" class="form-control {% if errors.get('username') %}is-invalid{% endif %}" name="username" required>
+          {% if errors.get('username') %}
+            <div class="invalid-feedback">{{ errors['username'] }}</div>
+          {% endif %}
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control {% if errors.get('email') %}is-invalid{% endif %}" name="email" required>
+          {% if errors.get('email') %}
+            <div class="invalid-feedback">{{ errors['email'] }}</div>
+          {% endif %}
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control {% if errors.get('password') %}is-invalid{% endif %}" name="password" required>
+          {% if errors.get('password') %}
+            <div class="invalid-feedback">{{ errors['password'] }}</div>
+          {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary w-100 btn-animate">Register</button>
+      </form>
+
+      <!-- Login link -->
+      <p class="text-center mt-3">
+        Already have an account? 
+        <a href="{{ url_for('login') }}" class="text-success fw-bold">Login here</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

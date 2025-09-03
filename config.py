@@ -1,0 +1,6 @@
+MYSQL_HOST = 'localhost'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = ''
+MYSQL_DB = 'login_system'
+MYSQL_CURSORCLASS = 'DictCursor'
+SECRET_KEY = 'your_secret_key'
