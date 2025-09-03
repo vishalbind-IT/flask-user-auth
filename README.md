@@ -31,12 +31,11 @@ A simple web application built with **Flask** that provides user registration, l
 ## Project Structure
 
 /flask-user-auth
-
-app.py # Main Flask application
-config.py # Configuration for MySQL connection and secret keys
-templates/ # HTML templates (login.html, register.html, dashboard.html)
-static/ # Static files (optional, for CSS/JS)
-README.md # Project documentation
+│
+├── app.py               # Main Flask application
+├── config.py            # Configuration for MySQL connection and secret keys
+├── templates/           # HTML templates (login.html, register.html, dashboard.html)
+└── static/              # Static files (optional, for CSS/JS) 
 
 yaml
 Copy code
